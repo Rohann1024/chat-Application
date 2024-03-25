@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #chat-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 600px;
+            max-width: 90%;
+        }
+        h1{
+            position: relative;
+            top:-30;
+        }
+        .meta{
+            font-size: 14px;
+            margin-top: 0.2%;
+            color: blue;
+            margin-bottom: 0.5%;
+        }
+        .text{
+            margin-top: 0;
+            margin-bottom: 3px;
+        }
+        .msg{
+            background-color: yellowgreen;
+            color: black;
+            padding:1px 12px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            max-height: 100px;
+
+        }
+        #chat-messages{
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            max-height: 50vh;
+            overflow-y: scroll;
+        }
+        .add-user{
+            padding: 10px;
+            margin-left: 40px;
+        }
+        #message {
+            width: calc(100% - 80px);
+            padding: 10px;
+            border: none;
+            border-radius: 0 0 0 0;
+            margin-right: 5px;
+            border-bottom: 1px solid black;
+            outline: none;
+        }
+        #send-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        .sidebar {
+            height: 100%;
+            width: 250px;
+             position: fixed;
+            top: 0;
+            left: 0;
+            border-left: 1px solid darkgray;
+            background-color: #36454F;
+            padding-top: 20px;
+        }
+        .user{
+            margin-bottom: 1px;
+            color:white;
+            padding: 1px;
+            font-weight: bold;
+            border-radius: 20px;
+            }
+        .user h3::before{
+            content: '';
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            position: absolute;
+            left: 13%;
+            background-color: green;
+        }
+    </style>
+    <!-- Socket.IO client library -->
+</head>
+<body>
+     <h1 style="text-align: center; color: green;">Talk Time</h1>
+     <div class="sidebar">
+        <h2 style="text-align:center;color: white; margin-bottom:0;">Online Users</h2>
+        <div class="add-user">
+           
+        </div>
+    </div>
+    <div id="chat-container">
+        <h2 style="text-align: center; color: blue;" >Room Name: <span class="room-name"></span></h2>
+        <div id="chat-messages"></div>
+        <div>
+            <form id="chat-form" style="display: flex;">
+            <input type="text" id="message" placeholder="Type your message..." autocomplete="off">
+            <button id="send-btn">Send</button>
+            </form>
+        </div>
+    </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.12.0/qs.min.js"></script>
+       <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+       <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

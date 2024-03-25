@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Talk Time</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container">
+<h1>Welcome to Talk Time</h1>
+    <h2>Join Existing Chat Room</h2>
+    <form onsubmit="joinChatRoom(event);" class="join-chat">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="roomCode">Room Code:</label>
+        <input type="text" id="roomCode" name="roomcode" required><br>
+        <button type="submit">Join Chat Room</button>
+    </form>
+    <h2>Create New Chat Room</h2>
+    <form onsubmit="createChatRoom(event);" class="create-chat">
+        <label for="username">Admin Name:</label>
+        <input type="text" id="ownName" name="value"required><br>
+         <label for="roomname">Room Name:</label>
+        <input type="text" id="roomName" name="rroom" required><br>
+        <label for="roomCode">Room Code:</label>
+        <input type="text" id="rCode" required><br>
+        <button type="submit" style="background: green;">Create Chat Room</button>
+    </form>
+   </div>
+   <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

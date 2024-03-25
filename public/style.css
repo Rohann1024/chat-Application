@@ -1,0 +1,34 @@
+body{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	background: lightyellow;
+	min-height: 100vh;
+}
+.container h1, h2{
+	text-align: center;
+	color: green;
+	background: lightpink;
+	border-bottom: 2px solid green;
+
+}
+.container{
+	background: lightblue;
+	border-radius: 20px;
+	width: 45vw;
+}
+.join-chat{
+	display: flex;
+	flex-direction: column;
+	margin:0px 40px;
+}
+.create-chat{
+	display: flex;
+	flex-direction: column;
+	margin:0px 40px;
+}
+.join-chat button{
+	background: blue;
+	color: white;
+	cursor: pointer;
+}

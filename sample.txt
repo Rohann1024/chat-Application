@@ -1,0 +1,28 @@
+const users=[];
+//join users to chat
+function userJoin(id,username,roomName){
+	const user={id,username,roomName};
+	users.push(user);
+	return user;
+}
+//get current Users
+function getUser(id){
+	return users.find(user=>user.id===id);
+}
+function userDisconnect(id){
+	const index=users.findIndex(user=> user.id===id);
+	if(index!=-1){
+		console.log(index);
+		return users.splice(index,1)[0];
+	}
+}
+function fetchUsers(roomName){
+	console.log(users);
+	return users.filter(user=> user.roomName===roomName);
+}
+module.exports={
+	userJoin,
+	getUser,
+	userDisconnect,
+	fetchUsers
+}
